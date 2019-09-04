@@ -59,7 +59,7 @@ class PinCodeEnter extends React.PureComponent {
         this.endProcess = this.endProcess.bind(this);
         this.launchTouchID = this.launchTouchID.bind(this);
     }
-    async componentWillMount() {
+    async UNSAFE_componentWillMount() {
         if (!this.props.storedPin) {
             const result = await Keychain.getInternetCredentials(this.props.pinCodeKeychainName);
             this.keyChainResult = result.password || undefined;
